@@ -39,7 +39,7 @@
 
             Label:
                 text: "Idade"
-                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                color: (0.3, 0.5, 0.2, 1) 
                 font_name: "Roboto"
             TextInput:
                 hint_text: "Idade"
@@ -50,7 +50,7 @@
 
             Label:
                 text: "Altura (cm)"
-                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                color: (0.3, 0.5, 0.2, 1)
                 font_name: "Roboto"
             TextInput:
                 hint_text: "Altura (cm)"
@@ -61,7 +61,7 @@
 
             Label:
                 text: "Peso (g)"
-                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                color: (0.3, 0.5, 0.2, 1) 
                 font_name: "Roboto"
             TextInput:
                 hint_text: "Peso (g)"
@@ -72,7 +72,7 @@
 
             Label:
                 text: "Sexo"
-                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                color: (0.3, 0.5, 0.2, 1)
                 font_name: "Roboto"
             GridLayout:
                 cols: 3
@@ -82,17 +82,17 @@
                 ToggleButton:
                     text: "Masculino"
                     group: "sex"
-                    background_color: (0.4, 0.2, 0.1, 1)  # Marrom
+                    background_color: (0.4, 0.2, 0.1, 1)  
                     font_name: "Roboto"
                 ToggleButton:
                     text: "Feminino"
                     group: "sex"
-                    background_color: (0.4, 0.2, 0.1, 1)  # Marrom
+                    background_color: (0.4, 0.2, 0.1, 1)  
                     font_name: "Roboto"
 
             Button:
                 text: "Calcular resultados"
-                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                background_color: (0.2, 0.6, 0.3, 1)  
                 size_hint: (1, None)
                 height: 50
                 on_release: root.get_results()
@@ -113,7 +113,7 @@
 
             Button:
                 text: "Escolher malha"
-                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                background_color: (0.2, 0.6, 0.3, 1)  
                 size_hint: (1, None)
                 height: 50
                 on_release: root.choose_mesh()
@@ -126,7 +126,7 @@
 
             Button:
                 text: "Mostrar malha"
-                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                background_color: (0.2, 0.6, 0.3, 1)  
                 size_hint: (1, None)
                 height: 50
                 on_release: root.open_mesh()
@@ -135,14 +135,14 @@
             Label:
                 text: root.mesh_volume_text
                 font_size: 18
-                color: (0.3, 0.2, 0.1, 1)  # Tom escuro para contraste
+                color: (0.3, 0.2, 0.1, 1)  
                 size_hint: (1, 0.2)
                 font_name: "Roboto"
 
             Label:
                 text: root.fat_percentage_text
                 font_size: 18
-                color: (0.3, 0.2, 0.1, 1)  # Tom escuro para contraste
+                color: (0.3, 0.2, 0.1, 1)  
                 size_hint: (1, 0.2)
                 font_name: "Roboto"
 

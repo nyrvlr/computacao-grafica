@@ -9,6 +9,7 @@
 - **layout.kv**: Arquivo de layout que define a interface gráfica do usuário.
 - **FacultyGlyphic-Regular.ttf**: Fonte utilizada para o design do aplicativo.
 - **grupo1_73250gramas_volume.ply**: Malha 3D utilizada no projeto, representando um objeto tridimensional.
+- **requirements.txt**: Lista das dependências e versões necessárias para executar o projeto, incluindo Kivy e PyVista.
 
 ## Como Rodar:
 1. Baixe todos os arquivos do projeto.

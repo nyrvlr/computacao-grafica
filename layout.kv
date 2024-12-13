@@ -1,0 +1,169 @@
+#:import Factory kivy.factory.Factory
+
+<MyLayout>
+    BoxLayout:
+        orientation: "horizontal"
+        padding: 20
+        spacing: 20
+        size: root.width, root.height
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: 20
+            spacing: 20
+            size_hint: (0.6, 1)
+            canvas.before:
+                Color:
+                    rgba: (0.88, 0.94, 0.87, 1)  
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10,]
+
+            Label:
+                text: "[color=#4CAF50][b]3D Scanner[/b][/color]"
+                markup: True
+                font_size: 32
+                font_name: "Faculty"
+
+            Label:
+                text: "Nome do Voluntário"
+                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                font_name: "Roboto"
+            TextInput:
+                hint_text: "Nome do Voluntário"
+                multiline: False
+                on_text: root.update_name(self.text)
+                size_hint: (1, None)
+                height: 30
+
+            Label:
+                text: "Idade"
+                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                font_name: "Roboto"
+            TextInput:
+                hint_text: "Idade"
+                input_filter: "int"
+                on_text: root.update_age(self.text)
+                size_hint: (1, None)
+                height: 30
+
+            Label:
+                text: "Altura (cm)"
+                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                font_name: "Roboto"
+            TextInput:
+                hint_text: "Altura (cm)"
+                input_filter: "int"
+                on_text: root.update_height(self.text)
+                size_hint: (1, None)
+                height: 30
+
+            Label:
+                text: "Peso (g)"
+                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                font_name: "Roboto"
+            TextInput:
+                hint_text: "Peso (g)"
+                input_filter: "int"
+                on_text: root.update_weight(self.text)
+                size_hint: (1, None)
+                height: 30
+
+            Label:
+                text: "Sexo"
+                color: (0.3, 0.5, 0.2, 1)  # Verde escuro
+                font_name: "Roboto"
+            GridLayout:
+                cols: 3
+                spacing: 10
+                size_hint: (1, None)
+                height: 50
+                ToggleButton:
+                    text: "Masculino"
+                    group: "sex"
+                    background_color: (0.4, 0.2, 0.1, 1)  # Marrom
+                    font_name: "Roboto"
+                ToggleButton:
+                    text: "Feminino"
+                    group: "sex"
+                    background_color: (0.4, 0.2, 0.1, 1)  # Marrom
+                    font_name: "Roboto"
+
+            Button:
+                text: "Calcular resultados"
+                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                size_hint: (1, None)
+                height: 50
+                on_release: root.get_results()
+                font_name: "Roboto"
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: 20
+            spacing: 20
+            size_hint: (0.4, 1)
+            canvas.before:
+                Color:
+                    rgba: (0.88, 0.94, 0.87, 1) 
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10,]
+
+            Button:
+                text: "Escolher malha"
+                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                size_hint: (1, None)
+                height: 50
+                on_release: root.choose_mesh()
+                font_name: "Roboto"
+
+            Image:
+                source: root.img_src
+                allow_stretch: True
+                size_hint: (1, 0.8)
+
+            Button:
+                text: "Mostrar malha"
+                background_color: (0.2, 0.6, 0.3, 1)  # Verde médio
+                size_hint: (1, None)
+                height: 50
+                on_release: root.open_mesh()
+                font_name: "Roboto"
+
+            Label:
+                text: root.mesh_volume_text
+                font_size: 18
+                color: (0.3, 0.2, 0.1, 1)  # Tom escuro para contraste
+                size_hint: (1, 0.2)
+                font_name: "Roboto"
+
+            Label:
+                text: root.fat_percentage_text
+                font_size: 18
+                color: (0.3, 0.2, 0.1, 1)  # Tom escuro para contraste
+                size_hint: (1, 0.2)
+                font_name: "Roboto"
+
+<FileSelector@Popup>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserIconView:
+            id: file_selector
+            path: root.execution_path
+            filters: ["*.ply"]
+            on_selection: root.chosen_file = self.selection and self.selection[0] or ''
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancelar"
+                on_release: root.cancel()
+                font_name: "Roboto"
+            Button:
+                text: "Carregar"
+                on_release: root.load(root.chosen_file)
+                font_name: "Roboto"

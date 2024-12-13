@@ -1,5 +1,4 @@
 # computacao-grafica
-# Projeto do Grupo
 
 ## Componentes do Grupo:
 - José Murillo

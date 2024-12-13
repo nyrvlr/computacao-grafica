@@ -1,9 +1,8 @@
-# Projeto do Grupo
-
 ## Componentes do Grupo:
-- Nome 1
-- Nome 2
-- ...
+- Ivaldo P. Araújo
+- José Murillo
+- Nayara Gonçalves
+- Pedro Shoji
 
 ## Descrição dos Arquivos:
 - **main.py**: Arquivo principal do projeto, contém a lógica do aplicativo.

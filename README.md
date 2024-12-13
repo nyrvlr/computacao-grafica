@@ -1,10 +1,9 @@
-# computacao-grafica
+# Projeto do Grupo
 
 ## Componentes do Grupo:
-- José Murillo
-- Nayara Gonçalves
-- Pedro Shoji
-- Ivaldo P. Araújo
+- Nome 1
+- Nome 2
+- ...
 
 ## Descrição dos Arquivos:
 - **main.py**: Arquivo principal do projeto, contém a lógica do aplicativo.
@@ -14,8 +13,12 @@
 
 ## Como Rodar:
 1. Baixe todos os arquivos do projeto.
-2. Abra o prompt de comando na pasta onde os arquivos foram salvos.
-3. Execute o comando:
+2. Instale as dependências necessárias executando os seguintes comandos no prompt de comando:
+   ```bash
+   pip install kivy
+   pip install pyvista
+3. Abra o prompt de comando na pasta onde os arquivos foram salvos.
+4. Execute o comando:
    ```bash
    python main.py
 
